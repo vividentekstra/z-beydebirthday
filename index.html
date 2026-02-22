@@ -93,7 +93,7 @@ button:hover {
     }
 }
 
-/* HAPPY BIRTHDAY ANİMASYONU */
+/* Happy Birthday */
 .birthday-text {
     position: fixed;
     top: 40%;
@@ -112,6 +112,22 @@ button:hover {
     30% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
     60% { transform: translate(-50%, -50%) scale(1); }
     100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+/* 🐵 Maymun köşesi */
+.monkey-corner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.monkey-corner:hover {
+    transform: scale(1.1);
 }
 
 footer {
@@ -138,17 +154,20 @@ footer {
             Yeni yaşın bol kahkahalı,<br>
             bol başarı dolu,<br>
             bol eğlenceli olsun 🎊<br><br>
-            İyi ki varsın, nice güzel yaşlara! (Bir de yemek yapabilirsen çok iyi olur.)
+            İyi ki varsın, nice güzel yaşlara!
         </p>
     </div>
 </div>
+
+<!-- 🐵 Maymun Görseli -->
+<img src="maymun.png" class="monkey-corner" alt="Punch Monkey">
 
 <audio id="bgMusic" loop>
     <source src="sarki.mp3" type="audio/mpeg">
 </audio>
 
 <footer>
-Made with ( - puana sahip tek kişi )
+Made with ☕ + 🎧
 </footer>
 
 <script>
@@ -180,7 +199,6 @@ function increaseSakura() {
     }
 }
 
-/* Konfeti */
 function createConfetti() {
     const colors = ["#ff4081", "#ffeb3b", "#4caf50", "#2196f3", "#ff9800"];
     for (let i = 0; i < 120; i++) {
@@ -190,18 +208,15 @@ function createConfetti() {
         conf.style.background = colors[Math.floor(Math.random() * colors.length)];
         conf.style.animationDuration = (Math.random() * 2 + 2) + "s";
         document.body.appendChild(conf);
-
         setTimeout(() => conf.remove(), 3000);
     }
 }
 
-/* HAPPY BIRTHDAY */
 function showBirthdayText() {
     let text = document.createElement("div");
     text.classList.add("birthday-text");
     text.innerText = "HAPPY BIRTHDAY!";
     document.body.appendChild(text);
-
     setTimeout(() => text.remove(), 2500);
 }
 </script>
